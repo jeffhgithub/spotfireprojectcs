@@ -1,0 +1,34 @@
+PROCEDURE "DHR8 TestandMeasData"(
+    IN firstDate CHAR(1), 
+	IN moduleContainerList VARCHAR(40000),
+    OUT result CURSOR (
+      	ModuleContainer VARCHAR(255),
+  		Owner VARCHAR(30),
+  		TestPlanExecutionDate TIMESTAMP,
+  		TestPlan VARCHAR(300),
+  		TestPlanRev VARCHAR(200),
+  		TestPlanHistoryID CHAR(16),
+  		TestPlanJudgement VARCHAR(30),
+  		TestOrder NUMERIC (12,0),
+  		TestName VARCHAR(50),
+  		TestJudgement VARCHAR(30),
+  		TestResultRowIndex  NUMERIC (12,0),
+  		TestResultColIndex VARCHAR(255),
+  		TestResultValue VARCHAR(1000),
+  		TestResultJudgement VARCHAR(30),
+  		Operation VARCHAR(30),
+ 		ZbPosition NUMERIC(12,0)
+        )
+    )
+
+		
+    BEGIN
+		DECLARE sqlText VARCHAR (40000);
+        if (firstDate='Y')	then
+			set sqlText = 'SELECT DHR8_TestandMeasData_FirstTXNDate.* FROM /shared/MES7/CommonalityAnalysis/NewViews/FirstTxnViews/DHR8TestAndMeasData_FirstTxnDate(moduleContainerList) DHR8_TestandMeasData_FirstTXNDate';			
+		else 
+			set sqlText = concat(concat('SELECT ModuleContainer,Owner,TestPlanExecutionDate,TestPlan,TestPlanRev,TestPlanHistoryID,TestPlanJudgement,TestOrder,TestName,TestJudgement,TestResultRowIndex,TestResultColIndex,TestResultValue,TestResultJudgement,Operation,ZbPosition FROM /shared/MES7/CommonalityAnalysis/NewViews/FullDataViews/"DHR8 TestandMeasData" DHR8_TestandMeasData WHERE CONTAINERID in (' , moduleContainerList ), ')');
+		end if;
+		OPEN result FOR sqlText;
+		--CALL print (sqlText); Query allways the same table; add a group by after get the result. if doesnt work , query upper
+    END

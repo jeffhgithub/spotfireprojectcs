@@ -1,0 +1,6 @@
+SELECT 
+trim(REPLACE (PeakPower."Date", ' ', '-')) "Date",
+   cast(PeakPower."Timestamp" as NUMERIC (12,8)) "Timestamp", 
+    cast(PeakPower." Measurement" as NUMERIC (25,20)) Measurement
+FROM      
+    /shared/MES7/SPC/"1 - Physical"/PeakPower PeakPower

@@ -1,0 +1,6 @@
+SELECT 
+    TO_DATE (Energy."Date", 'DD-Mon-YYYY') "Date", 
+    Energy."Timestamp", 
+    Energy.Measurement
+FROM      
+    /shared/MES7/SPC/"2 - Business"/Energy Energy

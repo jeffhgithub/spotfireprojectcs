@@ -1,0 +1,61 @@
+PROCEDURE NCR_L3_UnionRwkAndNotRWKANDExcluding(
+    IN p_StartDate DATE, 
+    IN p_EndDate DATE, 
+    IN p_SupplierName VARCHAR(40000), 
+    IN p_ProductId VARCHAR(40000), 
+    IN p_MfgOrderId VARCHAR(40000), 
+    IN p_ComponentProductId VARCHAR(40000), 
+    IN p_ComponentProductGroupId VARCHAR(40000), 
+    OUT result CURSOR (
+        Product VARCHAR(255), 
+        PartNumber VARCHAR(255), 
+        ComponentProductGroup VARCHAR(255), 
+        Component VARCHAR(255), 
+        ComponentDesc VARCHAR(255), 
+        MfgOrder VARCHAR(255), 
+        ModuleSN VARCHAR(255), 
+        TxnName VARCHAR(255), 
+        ComponentIssueTxnDate TIMESTAMP, 
+        QtyIssued INTEGER, 
+        IssuedComponentReferenceDesignator VARCHAR(255), 
+        Batch VARCHAR(255), 
+        SupplierPartNumber VARCHAR(255), 
+        SupplierLot VARCHAR(255), 
+        NonConformanceReport VARCHAR(255), 
+        NCRCreateDate TIMESTAMP, 
+        NonConformanceReferenceDesignator VARCHAR(255), 
+        FailModeReferenceDesignator VARCHAR(255), 
+        DispostionCode VARCHAR(255), 
+        RootCauseCode VARCHAR(255), 
+        RootCauseCodeDesc VARCHAR(255), 
+        RootCauseType VARCHAR(255), 
+        NonConformanceCode VARCHAR(255), 
+        NonConformanceCodeDesc VARCHAR(255), 
+        NCRComment VARCHAR(255), 
+        FailureModeCode VARCHAR(255), 
+        FailureModeDesc VARCHAR(255), 
+        NCRStatus INTEGER, 
+        TxnMonth INTEGER, 
+        TxnYear INTEGER, 
+        MfgOrderID VARCHAR(255), 
+        ProductID VARCHAR(255), 
+        ComponentProductGroupID VARCHAR(255), 
+        Supplier VARCHAR(255), 
+        ComponentProductID VARCHAR(255)
+        )
+    )
+    BEGIN
+        OPEN result FOR 
+            select * from (
+			SELECT 
+                *
+            FROM      
+                /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L1_notrw(p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId) NCR_notrw_Level1
+				where NonConformanceReport not in (select NonConformanceReport from  /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L2_ExcludingOriginalReworked(p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId)  )
+			UNION
+			SELECT 
+                *
+            FROM      
+                /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L1_rw(p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId) NCR_rw_Level1
+			) A;
+

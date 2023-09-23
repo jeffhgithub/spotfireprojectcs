@@ -1,0 +1,35 @@
+PROCEDURE "DHR6 ProcessTrace"(
+    IN firstDate CHAR(1), 
+	IN moduleContainerList VARCHAR(40000),
+    OUT result CURSOR (
+        ModuleContainer VARCHAR(255), 
+        Operation VARCHAR(30), 
+        Resource VARCHAR(30), 
+        OperatorID VARCHAR(255), 
+        Workflow VARCHAR(50), 
+        ERPRouteRev VARCHAR(15), 
+        WorkflowRev VARCHAR(15), 
+        TxnDate TIMESTAMP, 
+        WorkCenter VARCHAR(30), 
+        WrkCtrDesc VARCHAR(255), 
+        CDOName VARCHAR(37), 
+        CDODesc VARCHAR(4000), 
+        ERPRouteName VARCHAR(30), 
+        OperDesc VARCHAR(255), 
+        Sequence BIGINT, 
+        ONDEFAULTROUTE BIGINT,
+ 		ZbPosition NUMERIC(12,0)
+        )
+    )
+
+		
+    BEGIN
+		DECLARE sqlText VARCHAR (40000);
+        if (firstDate='Y')	then
+			set sqlText = 'SELECT DHR6_ProcessTrace_FirstTXNDate.* FROM /shared/MES7/CommonalityAnalysis/NewViews/FirstTxnViews/DHR6ProcessTrace_FirstTXNDate(moduleContainerList) DHR6_ProcessTrace_FirstTXNDate';			
+		else 
+			set sqlText = concat(concat('SELECT ModuleContainer,Operation,Resource,OperatorID,Workflow,ERPRouteRev,WorkflowRev,TxnDate,WorkCenter,WrkCtrDesc,CDOName,CDODesc,ERPRouteName,OperDesc,Sequence,ONDEFAULTROUTE,ZbPosition FROM /shared/MES7/CommonalityAnalysis/NewViews/FullDataViews/"DHR6 ProcessTrace" DHR6_ProcessTrace WHERE CONTAINERID in (' , moduleContainerList ), ')');
+		end if;
+		OPEN result FOR sqlText;
+		--CALL print (sqlText); Query allways the same table; add a group by after get the result. if doesnt work , query upper
+    END

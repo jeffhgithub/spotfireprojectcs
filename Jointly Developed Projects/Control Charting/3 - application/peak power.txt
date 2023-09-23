@@ -1,0 +1,14 @@
+select 
+TO_DATE (maxPP."Date", 'DD-Mon-YYYY') "Date", 
+PeakPower."Timestamp",
+maxPP.Measurement
+FROM
+(SELECT 
+    PeakPower."Date",     
+    Max(PeakPower.Measurement) Measurement
+FROM      
+    /shared/MES7/SPC/"2 - Business"/PeakPower PeakPower
+GROUP BY 
+    PeakPower."Date"
+) maxPP
+INNER JOIN /shared/MES7/SPC/"2 - Business"/PeakPower PeakPower ON maxPP."Date" = PeakPower."Date" AND maxPP."Measurement" = PeakPower."Measurement"

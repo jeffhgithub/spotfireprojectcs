@@ -1,0 +1,4 @@
+SELECT 
+    count(*) as a 
+FROM      
+    /shared/MES7/SPC/"1 - Physical"/PeakPower PeakPower

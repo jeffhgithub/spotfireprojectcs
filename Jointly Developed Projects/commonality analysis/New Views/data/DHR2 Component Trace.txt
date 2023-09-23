@@ -1,0 +1,29 @@
+PROCEDURE "DHR2 ComponentTrace"(
+    IN firstDate CHAR(1), 
+	IN moduleContainerList VARCHAR(40000),
+    OUT result CURSOR (
+          ModuleContainer  VARCHAR(255), 
+		  ComponentBatch  VARCHAR(255),
+		  Component VARCHAR(30), 
+		  ComponentDesc VARCHAR(255),
+		  Operation VARCHAR(30),
+		  OperatorID VARCHAR(255),
+		  ReferenceDesignator VARCHAR(30),
+		  TxnDate TIMESTAMP,
+		  Qty DOUBLE,
+		  OperDesc VARCHAR(255),
+		  VendorBatch VARCHAR(30),
+		 ZbPosition NUMERIC(12,0)
+        )
+    )
+		
+    BEGIN
+		DECLARE sqlText VARCHAR (40000);
+        if (firstDate='Y')	then
+			set sqlText = 'SELECT DHR2.* FROM /shared/MES7/CommonalityAnalysis/NewViews/FirstTxnViews/DHR2ComponentTrace_FirstTXNDate(moduleContainerList) DHR2';		
+		else 
+ 			set sqlText = concat(concat('SELECT ModuleContainer,ComponentBatch,Component,ComponentDesc,Operation,OperatorID,ReferenceDesignator,TxnDate,Qty,OperDesc,VendorBatch,ZbPosition FROM /shared/MES7/CommonalityAnalysis/NewViews/FullDataViews/"DHR2 ComponentTrace" WHERE CONTAINERID in (' , moduleContainerList ), ')');
+		end if;
+		OPEN result FOR sqlText;
+		--CALL print (sqlText); Query allways the same table; add a group by after get the result. if doesnt work , query upper
+    END

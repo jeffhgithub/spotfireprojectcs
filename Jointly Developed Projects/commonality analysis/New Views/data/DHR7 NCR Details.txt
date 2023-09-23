@@ -1,0 +1,41 @@
+PROCEDURE "DHR7 NCR Details"(
+	IN moduleContainerList VARCHAR(40000),
+    OUT result CURSOR (
+		ModuleContainer VARCHAR(255),	
+		NonConformanceCode VARCHAR(255), 
+		TxnDate TIMESTAMP, 
+		NCRCreationDate TIMESTAMP, 
+		NCRCloseDate TIMESTAMP, 
+		CCAR VARCHAR(255), 
+		RCCodeDesc VARCHAR(255), 
+		OperatorID VARCHAR(255), 
+		DispositionCode VARCHAR(255), 
+		Workflow VARCHAR(255), 
+		NCReferenceDesignator VARCHAR(255), 
+		FailureModeCode VARCHAR(255), 
+		FailModeCodeDesc VARCHAR(255), 
+		FMReferenceDesignator VARCHAR(255), 
+		NCRStatus NUMERIC(12,0), 
+		NCRStatDesc VARCHAR(255), 
+		Component VARCHAR(255), 
+		RootCauseCode VARCHAR(255), 
+		WorkflowStep VARCHAR(255), 
+		NonConformanceReport VARCHAR(255), 
+		CDOName VARCHAR(255), 
+		NCCodeDesc VARCHAR(255), 
+		ZbPosition NUMERIC(12,0), 
+		TestPlanHistoryID  VARCHAR(255), 
+		TestOrder NUMERIC(12,0),
+		TestName VARCHAR(255),
+		NCRCOMMENT VARCHAR(256),
+		NonconformanceReportName VARCHAR(255) 
+        )
+    )
+
+		
+    BEGIN
+		DECLARE sqlText VARCHAR (40000);
+ 		set sqlText = 'SELECT * FROM /shared/MES7/CommonalityAnalysis/NewViews/FirstTxnViews/DHR7NCRDetails_FirstTestOrder(moduleContainerList)';			
+		OPEN result FOR sqlText;
+		--CALL print (sqlText); Query allways the same table; add a group by after get the result. if doesnt work , query upper
+    END

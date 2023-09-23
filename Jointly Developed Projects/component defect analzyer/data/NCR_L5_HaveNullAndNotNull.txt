@@ -1,0 +1,21 @@
+PROCEDURE NCR_L5_HaveNullAndNotNull(
+    IN p_StartDate DATE, 
+    IN p_EndDate DATE, 
+    IN p_SupplierName VARCHAR(40000), 
+    IN p_ProductId VARCHAR(40000), 
+    IN p_MfgOrderId VARCHAR(40000), 
+    IN p_ComponentProductId VARCHAR(40000), 
+    IN p_ComponentProductGroupId VARCHAR(40000),
+    OUT result CURSOR (
+        keyToRemove VARCHAR(255)
+        )
+    )
+    BEGIN
+        OPEN result FOR 
+            SELECT 
+                concat (concat (a.ModuleSN, a.TxnName),a.IssuedComponentReferenceDesignator) as keyToRemove
+            FROM      
+                /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L4_ComponentIssues_NCRDataA (p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId) a INNER JOIN 
+                     /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L4_ComponentIssues_NCRDataB(p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId) b
+                ON a.ModuleSN = b.ModuleSN and a.TxnName = b.TxnName and a.IssuedComponentReferenceDesignator = b.IssuedComponentReferenceDesignator;
+    END

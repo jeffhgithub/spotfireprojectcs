@@ -1,0 +1,493 @@
+
+select 
+'20 Sep 2021' "Date",
+*
+ from 
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"20 Sept 2021 Peak Power.csv"
+
+union all
+SELECT 
+'24 Sep 2021' "Date",
+   *
+FROM
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"24 Sept 2021 Peak Power.csv"
+
+union all
+SELECT 
+'28 Sep 2021' "Date",
+   *
+FROM 
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"28 Sept 2021 Peak Power.csv"
+
+union all
+select 
+'4 Oct 2021' "Date",
+*
+ from 
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"4 Oct 2021 Peak Power.csv"
+
+union all 
+SELECT 
+'11 Oct 2021' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"11 Oct 2021 Peak Power.csv"
+
+union all
+SELECT 
+'18 Oct 2021' "Date",
+   *
+FROM
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"18 Oct 2021 Peak Power.csv"
+
+union all
+SELECT 
+'25 Oct 2021' "Date",
+   *
+FROM
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"25 Oct 2021 Peak Power.csv"
+
+union all
+SELECT 
+'01 Nov 2021' "Date",
+   *
+FROM      
+    /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"01 Nov 2021 Peak Power.csv"
+
+union all
+SELECT 
+'08 Nov 2021' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"08 Nov 2021 Peak Power.csv"
+
+union all
+SELECT 
+'15 Nov 2021' "Date",
+   *
+FROM
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"15 Nov 2021 Peak Power.csv"
+
+union all 
+SELECT 
+'22 Nov 2021' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"22 Nov 2021 Peak Power.csv"
+
+union all
+SELECT 
+'29 Nov 2021' "Date",
+   *
+FROM
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"29 Nov 2021 Peak Power.csv"
+
+union all
+SELECT 
+'06 Dec 2021' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"06 Dec 2021 Peak Power.csv"
+
+union all
+SELECT 
+'13 Dec 2021' "Date",
+   *
+FROM  
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"13 Dec 2021 Peak Power.csv"
+
+union all  /* this query was a problematic one */
+SELECT 
+'21 Dec 2021' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"21 Dec 2021 Peak Power.csv"
+
+union all
+SELECT 
+'04 Jan 2022' "Date",
+   *
+FROM  
+    /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"04 Jan 2022 Peak Power.csv" 
+
+union all
+SELECT 
+'10 Jan 2022' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"10 Jan 2022 Peak Power.csv"
+
+union all
+SELECT 
+'17 Jan 2022' "Date",
+   *
+FROM 
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"17 Jan 2022 Peak Power.csv"
+
+union all
+SELECT 
+'24 Jan 2022' "Date",
+   *
+FROM  
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"24 Jan 2022 Peak Power.csv"
+
+union all
+select 
+'31 Jan 2022' "Date",
+*
+ from 
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"31 Jan 2022 Peak Power.csv"
+
+union all
+SELECT 
+'07 Feb 2022' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"07 Feb 2022 Peak Power.csv"
+
+union all
+SELECT 
+'14 Feb 2022' "Date",
+   *
+FROM
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"14 Feb 2022 Peak Power.csv"
+
+union all
+SELECT 
+'21 Feb 2022' "Date",
+   *
+FROM      
+/shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"21 Feb 2022 Peak Power.csv"
+
+union all 
+select
+	'07 Mar 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"07 Mar 2022 Peak Power.csv"
+
+union all
+select
+	'14 Mar 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"14 Mar 2022 Peak Power.csv"
+
+union all
+select
+	'28 Feb 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"28 Feb 2022 Peak Power.csv"
+
+union all
+select
+	'21 Mar 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"21 Mar 2022 Peak Power.csv"
+
+union all
+select
+	'28 Mar 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"28 Mar 2022 Peak Power.csv"
+
+union all
+select
+	'04 Apr 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"04 Apr 2022 Peak Power.csv"
+
+union all
+select
+	'11 Apr 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"11 Apr 2022 Peak Power.csv"
+
+union all
+select
+	'19 Apr 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"19 Apr 2022 Peak Power.csv"
+
+union all
+select
+	'25 Apr 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"25 Apr 2022 Peak Power.csv"
+
+union all 
+select
+	'02 May 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"02 May 2022 Peak Power.csv"
+
+union all
+select
+	'10 May 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"10 May 2022 Peak Power.csv"
+
+union all
+select
+	'16 May 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"16 May 2022 Peak Power.csv"
+
+union all
+select
+	'23 May 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"23 May 2022 Peak Power.csv"
+
+union all 
+select
+	'31 May 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"31 May 2022 Peak Power.csv"
+
+union all  
+select
+	'06 Jun 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"06 June 2022 Peak Power.csv"
+
+union all
+select
+	'13 Jun 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"13 June 2022 Peak Power.csv"
+
+union all 
+select
+	'20 Jun 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"20 June 2022 Peak Power.csv"
+
+union all 
+select
+	'27 Jun 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"27 June 2022 Peak Power.csv"
+
+union all 
+select
+	'11 Jul 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"11 Jul 2022 Peak Power.csv"
+union all 
+select
+	'19 Jul 2022' "Date",
+	*
+from 
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"19 Jul 2022 Peak Power.csv"
+union all
+select
+	'25 Jul 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"25 Jul 2022 Peak Power.csv"
+union all
+select
+	'01 Aug 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"01 Aug 2022 Peak Power.csv"
+union all
+select
+	'08 Aug 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"08 Aug 2022 Peak Power.csv"
+union all
+select
+	'15 Aug 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"15 Aug 2022 Peak Power.csv"
+union all
+select
+	'22 Aug 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"22 Aug 2022 Peak Power.csv"
+union all
+select
+	'01 Sep 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"01 Sep 2022 Peak Power.csv"
+union all
+select
+	'06 Sep 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"06 Sep 2022 Peak Power.csv"
+union all
+select
+	'16 Sep 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"16 Sep 2022 Peak Power.csv"
+union all
+select
+	'19 Sep 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"19 Sep 2022 Peak Power.csv"
+
+union all
+select
+	'26 Sep 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"26 Sep 2022 Peak Power.csv"
+
+union all
+select
+	'03 Oct 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"03 Oct 2022 Peak Power.csv"
+
+union all
+select
+	'10 Oct 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"10 Oct 2022 Peak Power.csv"
+
+union all
+select
+	'17 Oct 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"17 Oct 2022 Peak Power.csv"
+
+union all
+select
+	'24 Oct 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"24 Oct 2022 Peak Power.csv"
+
+union all
+select
+	'31 Oct 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"31 Oct 2022 Peak Power.csv"
+
+union all
+select
+	'07 Nov 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"07 Nov 2022 Peak Power.csv"
+
+union all
+select
+	'14 Nov 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"14 Nov 2022 Peak Power.csv"
+
+union all
+select
+	'28 Nov 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"28 Nov 2022 Peak Power.csv"
+
+union all
+select
+	'05 Dec 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"05 Dec 2022 Peak Power.csv"
+
+union all
+select
+	'12 Dec 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"12 Dec 2022 Peak Power.csv"
+
+union all
+select
+	'19 Dec 2022' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"19 Dec 2022 Peak Power.csv"
+
+union all
+select
+	'03 Jan 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"03 Jan 2023 Peak Power.csv"
+
+union all
+select
+	'09 Jan 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"09 Jan 2023 Peak Power.csv"
+
+union all
+select
+	'16 Jan 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"16 Jan 2023 Peak Power.csv"
+
+union all
+select
+	'23 Jan 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"23 Jan 2023 Peak Power.csv"
+
+union all
+select
+	'30 Jan 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"30 Jan 2023 Peak Power.csv"
+
+union all
+select
+	'08 Feb 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"08 Feb 2023 Peak Power.csv"
+
+union all
+select
+	'15 Feb 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"15 Feb 2023 Peak Power.csv"
+
+union all
+select
+	'20 Feb 2023' "Date",
+	*
+from
+  /shared/MES7/CSVRepository/"LaserTool Data"/Laser_Welder_2/"Peak Power"/"20 Feb 2023 Peak Power.csv"

@@ -1,0 +1,21 @@
+PROCEDURE NCR_L2_ExcludingOriginalReworked(
+    IN p_StartDate DATE, 
+    IN p_EndDate DATE, 
+    IN p_SupplierName VARCHAR(40000), 
+    IN p_ProductId VARCHAR(40000), 
+    IN p_MfgOrderId VARCHAR(40000), 
+    IN p_ComponentProductId VARCHAR(40000), 
+    IN p_ComponentProductGroupId VARCHAR(40000),
+    OUT result CURSOR (
+        NonConformanceReport VARCHAR(255)
+        )
+    )
+    BEGIN
+        OPEN result FOR 
+            SELECT 
+                NCR_notrw_Level1.NonConformanceReport
+            FROM      
+                /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L1_notrw(p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId) NCR_notrw_Level1 INNER JOIN 
+                    /shared/MES7/"Component Defect Analysis"/ParametrizedQueriesMultipleParams/NCR_L1_rw(p_StartDate, p_EndDate, p_SupplierName, p_ProductId, p_MfgOrderId, p_ComponentProductId, p_ComponentProductGroupId) NCR_rw_Level1
+                ON NCR_notrw_Level1.NonConformanceReport = NCR_rw_Level1.NonConformanceReport;
+    END
